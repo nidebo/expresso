@@ -1,0 +1,178 @@
+@font-face {
+    font-family: "wendelin";
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/WendelinNormalKapitaelchen.ttf') format('truetype');
+}
+
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    /*background: #52CCCC;*/
+    background-image:url('../img/fondo.jpg');
+    background-repeat: repeat;
+    font-weight: bold;
+}
+
+
+/*fieldset {
+}*/
+
+/*.consultar-button {
+}*/
+
+.welcome-text {
+    font-family: "wendelin";
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.query-text {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 23px;
+}
+
+.login {
+    padding-top: 15px;
+    margin-top: 10%;
+    background-color: #FFFFFF;/*#D7D2D2*/
+    /*opacity: 0.9;*/
+    border-radius: 12px;
+    width: 45%;
+    padding-bottom: 5px;
+    margin-left: 27.5%;
+    -moz-box-shadow: 0 7px 7px 9px  rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 7px 7px 9px  rgba(0,0,0,0.5);
+    box-shadow: 0 7px 7px 9px  rgba(0,0,0,0.5);
+}
+
+.login-form {
+    /*margin-left: 2.3%;*/
+}
+
+#login-button {
+    width: 80px;
+    font-size: 13px;
+    /*margin-left: 60px;*/
+}
+
+.query {
+    background-color: white;
+    /*border-radius: 12px;*/
+    width: 100%;
+    /*padding-top: 15px;*/
+    float: left;
+    /*margin: 50px;*/
+}
+
+.query-form {
+    /*margin-left: 18%;*/
+    margin-bottom: 20px;
+}
+
+.result-div {
+    border-radius: 12px;
+    width: 80%;
+    /*height: 300px;*/
+    background-color: #C1DADE;
+    float: left;
+    margin: 20px 50px 50px 50px;
+    padding: 10px;
+}
+
+.table td {
+    border-top: 2px solid #ffffff;
+}
+
+legend {
+    margin-bottom: 17px;
+    font-size: 15px;
+}
+
+label {
+    font-size: 12px;
+}
+
+.bar {
+    height: 40px;
+    background-color: #C4C4C4;
+    /*opacity: 0.8;*/
+}
+
+body {
+    padding: 0;
+}
+
+.username-text {
+    margin-top: 12px;
+    margin-left: 7.5%;
+    float: left;
+    font-size: 17px;
+}
+
+.logout {
+    float: right;
+    color: black;
+    margin-top: 12px;
+    margin-right: 7.5%;
+    /*margin-left: 70%;*/
+    /*background-color: #DFE156;*/
+}
+
+select {
+    width: 70%;
+}
+
+.row-fluid > .span1 {
+    text-align: center;
+    width: 12%;
+    margin-left: 2%;
+}
+
+.button-div {
+    text-align: center;
+}
+
+#botin {
+    width: 30%;
+}
+
+.row-fluid {
+    /*width: 98.3%;*/
+    /*padding-left: 1.7%;*/
+}
+
+#new-button {
+    margin-left: 2%;
+    font-size: 12px;
+}
+
+.texto-modal {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+#modal {
+    height: 400px;
+}
+
+.login-form > .control-group > .controls {
+    margin-left: 0;
+}
+
+.login-form > .control-group {
+    text-align: center;
+}
+
+.new-form {
+    /*margin-top: 20px;*/
+}
+
+.new-form > .control-group > .control-label {
+    font-size: 15px;
+}

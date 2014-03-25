@@ -1,0 +1,9 @@
+//Esquema muy primitivo
+
+{
+    familia: 'papel',
+    material: 'celulosa',
+    proveedor: 'Tafarello',
+    proveedorId: 'TF',
+    precioUnidad: 0.2
+}

@@ -1,0 +1,215 @@
+extends layout
+block content
+    div.bar
+        p.username-text
+            | Bienvenido, #{username}.
+        a(class="logout", href='/logout') Salir
+    div.query
+        h1(class="query-text")= title
+        div(class="query-form", id="form")
+            div.row-fluid
+                div.span1
+                    p
+                        | Familia  
+                    select(id='familia', name='familia')
+                        option
+                            | Papel
+                        option
+                            | Plastico
+                        option
+                            | Tela
+                        option
+                            | Rafia
+                        option
+                            | Algodon
+                div.span1
+                    p
+                        | Elaboracion
+                    select(id='elaboracion', name='elaboracion')
+                        option
+                            | Anonima
+                        option
+                            | Estampada
+                        option
+                            | Personalizada
+                div.span1
+                    p
+                        | Material
+                    select(id='material', name='material')
+                        option
+                            | Todos
+                        option
+                            | Celulosa
+                        option
+                            | Kraft Natural Liso
+                        option
+                            | Kraft Verjurado
+                        option
+                            | Estucado
+                div.span1
+                    p
+                        | Tintas  
+                    select(id='tintas', name='tintas')
+                        option
+                            | 1
+                        option
+                            | 2
+                        option
+                            | 3
+                        option
+                            | 4
+                        option
+                            | 5
+                        option
+                            | 6
+                div.span1
+                    p
+                        | Cantidad  
+                    select(id='cantidad', name='cantidad')
+                        option
+                            | 400
+                        option
+                            | 500
+                        option
+                            | 600
+                        option
+                            | 800
+                        option
+                            | 1000
+                        option
+                            | 1200
+                        option
+                            | 2000
+                        option
+                            | 3000
+                        option
+                            | 4000
+                        option
+                            | 5000
+                        option
+                            | 10000
+                        option
+                            | 15000
+                div.span1
+                    p
+                        | Ancho  
+                    select(id='ancho', name='ancho')
+                        option
+                            | 10
+                        option
+                            | 20
+                        option
+                            | 30
+                        option
+                            | 40
+                        option
+                            | 50
+                        option
+                            | 60
+                div.span1
+                    p
+                        | Gama
+                    select(id='gama', name="gama")
+                        option
+                            | Low Cost
+                        option
+                            | Economica
+                        option
+                            | Lujo
+            //- fieldset#fs
+            //-     legend
+            //-         | Medidas
+            //-     label
+            //-         | Ancho  
+            //-     input.tt(type="text", id="ancho", name="ancho", disabled)
+            //-     input.ch(type="checkbox", id="checkancho")
+            //-     br
+                //- label
+                //-     | Alto  
+                //- input.tt(type="text", id="alto", name="alto", disabled)
+                //- input.ch(type="checkbox", id="checkalto")
+                //- br
+                //- label
+                //-     | Fuelle  
+                //- input.tt(type="text", id="fuelle", name="fuelle", disabled)
+                //- input.ch(type="checkbox", id="checkfuelle")
+            script.(type='text/javascript')
+                //- document.getElementById('checkancho').onchange = function() {
+                //- document.getElementById('ancho').disabled = !this.checked;
+                //- };
+                //- document.getElementById('checkalto').onchange = function() {
+                //- document.getElementById('alto').disabled = !this.checked;
+                //- };
+                //- document.getElementById('checkfuelle').onchange = function() {
+                //- document.getElementById('fuelle').disabled = !this.checked;
+                //- };
+                window.onload = function() {
+                //- document.getElementById('checkancho').checked = false;
+                //- document.getElementById('checkalto').checked = false;
+                //- document.getElementById('checkfuelle').checked = false;
+                //- document.getElementById('ancho').value = "";
+                //- document.getElementById('alto').value = "";
+                //- document.getElementById('fuelle').value = "";
+                document.getElementById('familia').options[0].selected = true;
+                }
+                var myselect=document.getElementById("familia")
+
+                myselect.onchange = function() {
+                    var sub = document.getElementById('material')
+                    var padre = myselect.options;
+                    var hijo = sub.options;
+                    hijo.length = null;
+                    if(myselect.options[0].selected==true){
+                        var h0 = new Option("Todos","Todos","","");
+                        var h1 = new Option("Celulosa","Celulosa","","");
+                        var h2 = new Option("Kraft Natural Liso","Kraft Natural Liso","","");
+                        var h3 = new Option("Kraft Verjurado","Kraft Verjurado","","");
+                        var h4 = new Option("Estucado","Estucado","","");
+                        hijo[0] = h0;
+                        hijo[1] = h1;
+                        hijo[2] = h2;
+                        hijo[3] = h3;
+                        hijo[4] = h4;
+                    }
+                    if(myselect.options[1].selected==true){
+                        var h0 = new Option("Todos","Todos","","");
+                        var h1 = new Option("Baja Presion","Baja Presion","","");
+                        var h2 = new Option("Alta Presion","Alta Presion","","");
+                        var h3 = new Option("Oxodegradable","Oxodegradable","","");
+                        var h4 = new Option("Biodegradable","Biodegradable","","");
+                        hijo[0] = h0;
+                        hijo[1] = h1;
+                        hijo[2] = h2;
+                        hijo[3] = h3;
+                        hijo[4] = h4;
+                    }
+                    if(myselect.options[2].selected==true){
+                        var h0 = new Option("Todos","Todos","","");
+                        var h1 = new Option("NT","NT","","");
+                        var h2 = new Option("NT Laminado","NT Laminado","","");
+                        hijo[0] = h0;
+                        hijo[1] = h1;
+                        hijo[2] = h2;
+                    }
+                    if(myselect.options[3].selected==true){
+                        var h0 = new Option("Rafia","Rafia","","");
+                        hijo[0] = h0;
+                    }
+                    if(myselect.options[4].selected==true){
+                        var h0 = new Option("Todos","Todos","","");
+                        var h1 = new Option("Organico","Organico","","");
+                        var h2 = new Option("Natural","Natural","","");
+                        hijo[0] = h0;
+                        hijo[1] = h1;
+                        hijo[2] = h2;
+                    }
+                    
+            
+                }
+            br
+            div.button-div
+                button(class='btn btn-success', id="botin") Consultar
+            //- input(type='submit', class='btn btn-success', id="botin") Consultar
+            //- button(class="btn btn-primary", type="button", id="botin") Default button
+    .result-div(style="display:none;")
+    script(type="text/javascript", src="js/query.js")

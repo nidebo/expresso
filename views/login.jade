@@ -1,0 +1,56 @@
+extends layout
+block content
+    div.login
+        h1(class="welcome-text")
+            | Welcome to Expresso
+        form(class="form-horizontal login-form", action='/login', method='post', accept-charset='utf-8')
+            div(class="control-group")
+                //- label(class="control-label", for="inputEmail") Username
+                div(class="controls")
+                    input(type="text", name='username', placeholder="Username", required)
+            div(class="control-group")
+                //- label(class="control-label", for="inutPassword") Password
+                div(class="controls")
+                    input(type="password", name="password", placeholder="Password", required)
+            div(class="control-group")
+                div(class="controls")
+                    button(id="login-button", type="submit", class="btn btn-small btn-primary") Login
+                    button(id="new-button", type="button", class="btn btn-small btn-danger", data-toggle="modal") No estás registrado?
+        //- Nuevo
+        div(id="modal", class="modal hide", tabindex="-1", role="dialog", aria-labelledBy="myModalLabel", aria-hidden="true")  
+            div(class="modal-header")
+                button(type="button", class="close", data-dismiss="modal", aria-hidden="true") &times;
+                h2 Hola, anónimo!
+            div(class="modal-body")
+                //- p(class="texto-modal") En poco tiempo podrás registrate en el sistema para poder utilizarlo.<br />
+                //-     | Mantente atento a la web!
+                p(class="texto-modal") Bienvenido a la web de Precios de Bolsas!<br />
+                    | Rellena el formulario para registrarte.
+                br
+                br
+                form(class="form-horizontal new-form", method='post', action='/new')
+                    .control-group
+                        label.control-label(for="empresa") Empresa
+                        .controls
+                            input(type="text", id="empresa", name="empresa", placeholder="Empresa", required)
+                    .control-group
+                        label.control-label(for="actividad") Actividad
+                        .controls
+                            input(type="text", id="actividad", name="actividad", placeholder="Actividad", required)
+                    .control-group
+                        label.control-label(for="email") Email
+                        .controls
+                            input(type="email", id="email", name="email", placeholder="Email", required)
+                    .control-group
+                        label.control-label(for="password") Password
+                        .controls
+                            input(type="password", id="password", name="password", placeholder="Password", required)
+                    .control-group
+                        .controls
+                            button(type="submit" class="btn") Enviar
+                            button(type="button" class="btn", data-dismiss="modal", aria-hidden="true") Cancelar
+
+        script(type='text/javascript').
+            $( "#new-button" ).click(function() {
+                $('#modal').modal();
+            });
